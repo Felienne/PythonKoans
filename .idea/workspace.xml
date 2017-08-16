@@ -2,13 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31240af3-3364-4a38-89c5-9841f94d94a3" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/koans/week_3_lesson_1_about_file_IO.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/koans/week_3_lesson_2_about_exceptions1.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/koans/week_3_lesson_3_about_methods.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/koans/week_3_lesson_4_about_functions.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/koans/week_3_lesson_5_about_none.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/koans/week_3_lesson_1_about_file_IO.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/koans/week_3_lesson_2_about_exceptions1.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/koans/week_3_lesson_3_about_methods.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/koans/week_3_lesson_4_about_functions.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/koans/week_3_lesson_5_about_none.py" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/koans/week_1_lesson_1_about_asserts.py" afterPath="$PROJECT_DIR$/koans/week_1_lesson_1_about_asserts.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/koans/week_1_lesson_2_about_assignments.py" afterPath="$PROJECT_DIR$/koans/week_1_lesson_2_about_assignments.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/koans/week_1_lesson_3_about_strings.py" afterPath="$PROJECT_DIR$/koans/week_1_lesson_3_about_strings.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/koans/week_1_lesson_4_about_lists.py" afterPath="$PROJECT_DIR$/koans/week_1_lesson_4_about_lists.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/koans/week_1_lesson_5_about_dictionaries.py" afterPath="$PROJECT_DIR$/koans/week_1_lesson_5_about_dictionaries.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/koans/week_2_lesson_1_about_string_manipulation.py" afterPath="$PROJECT_DIR$/koans/week_2_lesson_1_about_string_manipulation.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/koans/week_2_lesson_2_about_control_statements.py" afterPath="$PROJECT_DIR$/koans/week_2_lesson_2_about_control_statements.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/koans/week_2_lesson_3_about_true_and_false.py" afterPath="$PROJECT_DIR$/koans/week_2_lesson_3_about_true_and_false.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/koans/week_2_lesson_4_about_while.py" afterPath="$PROJECT_DIR$/koans/week_2_lesson_4_about_while.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/koans/week_2_lesson_5_about_iteration.py" afterPath="$PROJECT_DIR$/koans/week_2_lesson_5_about_iteration.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/koans/week_2_lesson_6_about_sets.py" afterPath="$PROJECT_DIR$/koans/week_2_lesson_6_about_sets.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,21 +33,51 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="week_3_lesson_2_about_exceptions1.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/koans/week_3_lesson_2_about_exceptions1.py">
+      <file leaf-file-name="week_2_lesson_2_about_control_statements.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/koans/week_2_lesson_2_about_control_statements.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-247">
-              <caret line="8" column="22" lean-forward="true" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="week_3_lesson_4_about_functions.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/koans/week_3_lesson_4_about_functions.py">
+      <file leaf-file-name="week_2_lesson_5_about_iteration.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/koans/week_2_lesson_5_about_iteration.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="417">
-              <caret line="83" column="0" lean-forward="true" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="week_2_lesson_4_about_while.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/koans/week_2_lesson_4_about_while.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="week_2_lesson_6_about_sets.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/koans/week_2_lesson_6_about_sets.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="week_1_lesson_2_about_assignments.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/koans/week_1_lesson_2_about_assignments.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -53,8 +93,8 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="week_3_lesson_5_about_none.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/koans/week_3_lesson_5_about_none.py">
+      <file leaf-file-name="week_1_lesson_3_about_strings.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/koans/week_1_lesson_3_about_strings.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -63,21 +103,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="week_3_lesson_1_about_file_IO.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/koans/week_3_lesson_1_about_file_IO.py">
+      <file leaf-file-name="week_1_lesson_5_about_dictionaries.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/koans/week_1_lesson_5_about_dictionaries.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-337">
+            <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="week_3_lesson_3_about_methods.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/koans/week_3_lesson_3_about_methods.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="65" column="0" lean-forward="true" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -505,14 +535,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/koans/week_1_lesson_1_about_asserts.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="19" lean-forward="false" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/koans/week_3_lesson_1_about_file_IO.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-337">
@@ -549,6 +571,70 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="417">
           <caret line="83" column="0" lean-forward="true" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/koans/week_1_lesson_2_about_assignments.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/koans/week_1_lesson_1_about_asserts.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="19" lean-forward="false" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/koans/week_1_lesson_3_about_strings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/koans/week_1_lesson_5_about_dictionaries.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/koans/week_2_lesson_2_about_control_statements.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/koans/week_2_lesson_6_about_sets.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/koans/week_2_lesson_4_about_while.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/koans/week_2_lesson_5_about_iteration.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
