@@ -5,7 +5,7 @@ from runner.koan import *
 
 
 class AboutTrueAndFalse(Koan):
-    #2
+    # 1
     def true_is_true(self):
         if True:
             truth = 'true branch'
@@ -13,7 +13,7 @@ class AboutTrueAndFalse(Koan):
             truth = 'false branch'
         self.assertEqual(__, truth)
 
-    #3
+    # 2
     def zero_is_false(self):
         if 0:
             truth = 'true branch'
@@ -21,7 +21,7 @@ class AboutTrueAndFalse(Koan):
             truth = 'false branch'
         self.assertEqual(__, truth)
 
-    #4
+    # 3
     def empty_string_is_false(self):
         if "":
             truth = 'true branch'
@@ -29,7 +29,7 @@ class AboutTrueAndFalse(Koan):
             truth = 'false branch'
         self.assertEqual(__, truth)
 
-    #5
+    # 4
     def empty_set_is_false(self):
         if []:
             truth = 'true branch'
@@ -37,7 +37,7 @@ class AboutTrueAndFalse(Koan):
             truth = 'false branch'
         self.assertEqual(__, truth)
 
-    #6
+    # 5
     def empty_list_is_false(self):
         if []:
             truth = 'true branch'
@@ -45,7 +45,7 @@ class AboutTrueAndFalse(Koan):
             truth = 'false branch'
         self.assertEqual(__, truth)
 
-    #7
+    # 6
     def test_everything_else_is_treated_as_true(self):
         # try some crazy things!
 
