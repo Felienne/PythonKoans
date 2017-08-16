@@ -10,107 +10,72 @@ class AboutRegex(Koan):
         http://www.forta.com/books/0672325667/
     """
 
-    def test_matching_literal_text(self):
-        """
-            Lesson 1 Matching Literal String
-        """
-        string = "Hello, my name is Felix and this koans are based on the Ben's book: Regular Expressions in 10 minutes."
-        m = re.search(__, string)
-        self.assertTrue(m and m.group(0) and m.group(0)== 'Felix', "I want my name")
+    def test_findall_multiple_times(self):
+        being = "Malkovich, Malkovich Malkovich. Malkovich Malkovich Malkovich"
+        m = re.findall('Malkovich', being)
 
-    def test_matching_literal_text_how_many(self):
-        """
-            Lesson 1 How many matches?
-
-            The default behaviour of most regular expression engines is to return just the first match.
-            In python you have the next options:
-
-                match()    -->  Determine if the RE matches at the beginning of the string.
-                search()   -->  Scan through a string, looking for any location where this RE matches.
-                findall()  -->  Find all substrings where the RE matches, and returns them as a list.
-                finditer() -->  Find all substrings where the RE matches, and returns them as an iterator.
-
-        """
-        string = "Hello, my name is Felix and this koans are based on the Ben's book: Regular Expressions in 10 minutes. Repeat My name is Felix"
-        m = re.match('Felix', string) #TIP: Maybe match it's not the best option
-
-        # I want to know how many times appears my name
-        self.assertEqual(m, __)
+        self.assertEqual(__, m)
+        self.assertEqual(__, len(m))
 
     def test_matching_literal_text_not_case_sensitivity(self):
-        """
-            Lesson 1 Matching Literal String non case sensitivity.
-            Most regex implementations also support matches that are not case sensitive. In python you can use re.IGNORECASE, in
-            Javascript you can specify the optional i flag.
-            In Ben's book you can see more languages.
+        movie_007 = "hello my name is bond, james bond. sadly my shift key is broken"
 
-        """
-        string = "Hello, my name is Felix or felix and this koans is based on the Ben's book: Regular Expressions in 10 minutes."
+        self.assertEqual(re.findall("Bond", movie_007), __)
+        self.assertEqual(re.findall("Bond", movie_007, re.IGNORECASE), __)
 
-        self.assertEqual(re.findall("felix", string), __)
-        self.assertEqual(re.findall("felix", string, re.IGNORECASE), __)
 
-    def test_matching_any_character(self):
-        """
-            Lesson 1 Matching any character
+    def test_matching_numbers(self):
+        address = "Beverly Hills 90210"
+        numbers_only_regex = '[0-9]'
 
-            . matches any character, alphabetic characters, digits and .
-        """
-        string = "pecks.xlx\n"    \
-                + "orders1.xls\n" \
-                + "apec1.xls\n"   \
-                + "na1.xls\n"     \
-                + "na2.xls\n"     \
-                + "sa1.xls"
+        numbers_only = re.findall(numbers_only_regex, address)
+        self.assertEquals(__,numbers_only)
 
-        # TIP: remember the name of this lesson
+    def test_matching_numbers(self):
+        address = "Beverly Hills 90210"
+        lower_case_letters_only_regex = '[a-z]'
 
-        change_this_search_string = 'a..xlx' # <-- I want to find all uses of myArray
-        self.assertEquals(len(re.findall(change_this_search_string, string)),3)
+        lower_case_letters_only = re.findall(lower_case_letters_only_regex, address)
+        self.assertEquals(__,lower_case_letters_only)
 
     def test_matching_set_character(self):
+        boys_names = """
+        Harry
+        Perry
+        Gary
+        Lary
+        Barry
+        Terry
         """
-            Lesson 2 Matching sets of characters
+        starts_with_b_or_h_then_arry = '[BH]arry'
+        names_I_like = re.findall(starts_with_b_or_h_then_arry, boys_names)
+        self.assertEquals(__,names_I_like)
 
-            A set of characters is defined using the metacharacters [ and ]. Everything between them is part of the set and
-            any one of the set members must match (but not all).
+    def test_matching_set_character(self):
+        girls_names = """
+        Evangeline
+        Carolynn
+        Mary
+        Erica
+        Eveline
+        Sheryll
         """
-        string = "sales.xlx\n"    \
-                + "sales1.xls\n"  \
-                + "orders3.xls\n" \
-                + "apac1.xls\n" \
-                + "sales2.xls\n"  \
-                + "na1.xls\n"  \
-                + "na2.xls\n"  \
-                + "sa1.xls\n"  \
-                + "ca1.xls"
-        # I want to find all files for North America(na) or South America(sa), but not (ca)
-        # TIP you can use the pattern .a. which matches in above test but in this case matches more than you want
-        change_this_search_string = '[nsc]a[2-9].xls'
-        self.assertEquals(len(re.findall(change_this_search_string, string)),3)
+        ends_with_ine = '[a-z]+ine'
+        names_I_like = re.findall(ends_with_ine, girls_names,  re.IGNORECASE)
+        self.assertEquals(__,names_I_like)
 
-    def test_anything_but_matching(self):
+
+    def test_matching_anything_but(self):
+        girls_names = """
+        Evangeline
+        Carolynn
+        Mary
+        Erica
+        Eveline
+        Sheryll
         """
-            Lesson 2 Using character set ranges
-            Occasionally, you'll want a list of characters that you don't want to match.
-            Character sets can be negated using the ^ metacharacter.
-
-        """
-        string = "sales.xlx\n"    \
-                + "sales1.xls\n"  \
-                + "orders3.xls\n" \
-                + "apac1.xls\n" \
-                + "sales2.xls\n"  \
-                + "sales3.xls\n"  \
-                + "europe2.xls\n"  \
-                + "sam.xls\n"  \
-                + "na1.xls\n"  \
-                + "na2.xls\n"  \
-                + "sa1.xls\n"  \
-                + "ca1.xls"
-
-        # I want to find the name sam
-        change_this_search_string = '[^nc]am'
-        self.assertEquals(re.findall(change_this_search_string, string), ['sam.xls'])
+        does_not_start_with_E = '[^E][a-z]+'
+        names_I_like = re.findall(does_not_start_with_E, girls_names)
+        self.assertEquals(__,names_I_like)
 
 

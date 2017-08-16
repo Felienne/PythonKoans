@@ -5,12 +5,12 @@ from runner.koan import *
 
 class AboutTuples(Koan):
 
-    #2
+    #1
     def test_creating_a_tuple(self):
         count_of_three = (1, 2, 3)
         self.assertEqual(__, count_of_three[2])
 
-    #3
+    #2
     def test_tuples_are_immutable_so_item_assignment_is_not_possible(self):
 
         count_of_three = (1, 2, 3)
@@ -19,13 +19,12 @@ class AboutTuples(Koan):
         except TypeError as ex:
             message = ex.args[0]
         self.assertEqual(message, __)
-    #4
+    #3
     def test_tuples_are_immutable_so_appending_is_not_possible(self):
         count_of_three =  (1, 2, 3)
         with self.assertRaises(___): count_of_three.append("boom")
 
-        # Tuples are less flexible than lists, but faster.
-    #5
+    #4
     def test_tuples_can_only_be_changed_through_replacement(self):
         count_of_three = (1, 2, 3)
 
@@ -36,7 +35,7 @@ class AboutTuples(Koan):
 
         self.assertEqual(__, count_of_three)
 
-    #6
+    #5
     def test_tuples_of_one_look_peculiar(self):
         number_one = 1
         self.assertEqual(__, number_one.__class__)
@@ -51,16 +50,16 @@ class AboutTuples(Koan):
         self.assertEqual(__, tup1.__class__)
         self.assertEqual(__, tup1)
 
-    #7
+    #6
     def test_tuple_constructor_can_be_surprising(self):
         self.assertEqual(__, tuple("Surprise!"))
 
-    #8
+    #7
     def test_creating_empty_tuples(self):
         self.assertEqual(__ , ())
         self.assertEqual(__ , tuple()) #Sometimes less confusing
 
-    #9
+    #8
     def test_tuples_can_be_nested(self):
         lat = (37, 14, 6, 'N')
         lon = (115, 48, 40, 'W')
