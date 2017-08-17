@@ -22,7 +22,8 @@ class AboutTuples(Koan):
     #3
     def test_tuples_are_immutable_so_appending_is_not_possible(self):
         count_of_three =  (1, 2, 3)
-        with self.assertRaises(___): count_of_three.append("boom")
+        with self.assertRaises(___):
+            count_of_three.append("boom")
 
     #4
     def test_tuples_can_only_be_changed_through_replacement(self):

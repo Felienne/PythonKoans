@@ -9,18 +9,8 @@ class AboutAssignments(Koan):
 
     # 2
     def test_integer_instance_of(self):
-        number_of_students = 137
-
-        # note the error message does not have quotes, so a string is not expected:
-        # AssertionError: '-=> FILL ME IN! <=-' != <class 'int'>
-
-        # when we expect a string, the error is:
-        # AssertionError: '-=> FILL ME IN! <=-' != '<class 'int'>'
-
-        # Thus, you need int (without quotes)
-        # not "<class 'int'>" !
-
-        self.assertEqual(__, type(number_of_students))
+        number_of_students = __
+        self.assertEqual(int, type(number_of_students))
 
     # 3
     def test_float_assignment(self):
@@ -30,7 +20,6 @@ class AboutAssignments(Koan):
     # 4
     def test_float_instance_of(self):
         a_piece_of_pi = 3.14
-        # can you guess the type?
         self.assertEqual(__, type(a_piece_of_pi))
 
     # 5
