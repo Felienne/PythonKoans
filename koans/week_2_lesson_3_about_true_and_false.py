@@ -6,53 +6,67 @@ from runner.koan import *
 
 class AboutTrueAndFalse(Koan):
     # 1
-    def true_is_true(self):
+    def test_true_is_true(self):
+        bear_poop_place = ""
+
         if True:
-            truth = 'true branch'
-        else:
-            truth = 'false branch'
-        self.assertEqual(__, truth)
+            bear_poop_place = ""
+
+        self.assertEqual("woods", bear_poop_place)
 
     # 2
-    def zero_is_false(self):
-        if 0:
-            truth = 'true branch'
-        else:
-            truth = 'false branch'
-        self.assertEqual(__, truth)
+    def test_false_is_false(self):
+        dessert = "chocolate"
+
+        if False:
+            dessert = "ketchup"
+
+        self.assertEquals(__, dessert);
 
     # 3
-    def empty_string_is_false(self):
+    def test_false_is_false(self):
+        dessert = "chocolate"
+
+        if 0:
+            dessert = "ketchup"
+
+        self.assertEquals(__, dessert);
+
+
+    # 3
+    def test_empty_string_is_false(self):
+        dessert = "chocolate"
+
         if "":
-            truth = 'true branch'
-        else:
-            truth = 'false branch'
-        self.assertEqual(__, truth)
+            dessert = "ketchup"
+
+        self.assertEquals(__, dessert);
 
     # 4
-    def empty_set_is_false(self):
-        if []:
-            truth = 'true branch'
-        else:
-            truth = 'false branch'
-        self.assertEqual(__, truth)
+    def test_empty_set_is_false(self):
+        dessert = "chocolate"
+
+        if {}:
+            dessert = "ketchup"
+
+        self.assertEquals(__, dessert);
 
     # 5
     def empty_list_is_false(self):
+        dessert = "chocolate"
+
         if []:
-            truth = 'true branch'
-        else:
-            truth = 'false branch'
-        self.assertEqual(__, truth)
+            dessert = "ketchup"
+
+        self.assertEquals(__, dessert);
 
     # 6
     def test_everything_else_is_treated_as_true(self):
-        # try some crazy things!
+        dessert = "chocolate"
 
         if 2:
-            truth = 'true branch'
-        else:
-            truth = 'false branch'
-        self.assertEqual(__, truth)
+            dessert = "ketchup"
+
+        self.assertEquals(__, dessert);
 
 
