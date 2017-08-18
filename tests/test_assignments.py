@@ -7,6 +7,7 @@ class AboutAssignmentsTest(Koan):
 
     def test_koans(self):
         koan = AboutAssignments()
+        self.setter = koan.set
         self.assert_koan(137, koan.test_integer_assignment)
 
     def assert_koan(self, answer, koan):
@@ -14,14 +15,12 @@ class AboutAssignmentsTest(Koan):
         self.assert_correct_answer(answer, koan)
 
     def assert_correct_answer(self, answer, koan):
-        global __
         reset = __
-        __ = answer
-        print("******* Answer is " + str(__))
+        self.setter(answer)
         try:
             koan()
         finally:
-            __ = reset
+            self.setter(reset)
 
     def assert_currently_failing(self, koan):
         failed = False

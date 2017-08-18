@@ -1,7 +1,6 @@
 from runner.koan import *
 
 class AboutAssignments(Koan):
-    
     # 1
     def test_integer_assignment(self):
         number_of_students = __
@@ -60,5 +59,9 @@ class AboutAssignments(Koan):
         self.assertEqual(__, first_minion)
         self.assertEqual(__, last_minion)
 
+    # Needed for testing
+    def set(self, value):
+        global __
+        __ = value
 
 
