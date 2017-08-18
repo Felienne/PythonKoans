@@ -2,10 +2,8 @@ from koans.week_1_lesson_2_about_assignments import AboutAssignments
 from runner.koan import *
 
 
-class AboutAssignmentsTest(Koan):
-    # 1
-
-    def test_koans(self):
+class KoanTest(Koan):
+    def test_lesson_2_assignments(self):
         koan = AboutAssignments()
         self.setter = koan.set
         self.assert_koan(137, koan.test_integer_assignment)
