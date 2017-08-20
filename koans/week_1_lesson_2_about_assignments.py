@@ -24,8 +24,8 @@ class AboutAssignments(Koan):
     # 5
     def test_multi_assignment(self):
         first_prime, second_prime = 2, 3
-        self.assertEqual(__, first_prime)
-        self.assertEqual(__, second_prime)
+        self.assertEqual(______, first_prime)
+        self.assertEqual(_______, second_prime)
 
     # 6
     def test_list_assignment(self):
@@ -60,8 +60,13 @@ class AboutAssignments(Koan):
         self.assertEqual(__, last_minion)
 
     # Needed for testing
-    def set(self, value):
+    def set(self, values):
         global __
-        __ = value
+        __ = values[0]
+        global ______
+        ______ = values[1]
+        global _______
+        _______ = values[2]
+
 
 
