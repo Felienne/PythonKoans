@@ -60,14 +60,7 @@ class AboutAssignments(Koan):
         self.assertEqual(__, first_minion)
         self.assertEqual(__, last_minion)
 
-    # Needed for testing
-    def set(self, values):
-        global __
-        __ = values[0]
-        global ______
-        ______ = values[1]
-        global _______
-        _______ = values[2]
+
 
 
 
