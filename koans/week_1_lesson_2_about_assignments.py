@@ -6,10 +6,11 @@ class AboutAssignments(Koan):
         number_of_students = __
         self.assertEqual(137, number_of_students)
 
-    # 2
+    # 2 TODO differs from version on Stepik, fix!
     def test_integer_instance_of(self):
         number_of_students = __
         self.assertEqual(int, type(number_of_students))
+
 
     # 3
     def test_float_assignment(self):
