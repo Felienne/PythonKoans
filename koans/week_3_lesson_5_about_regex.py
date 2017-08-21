@@ -33,7 +33,7 @@ class AboutRegex(Koan):
         self.assertEquals(__,numbers_only)
 
     # 4
-    def test_matching_numbers(self):
+    def test_matching_lower_case(self):
         address = "Beverly Hills 90210"
         lower_case_letters_only_regex = '[a-z]'
 
