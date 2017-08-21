@@ -11,7 +11,7 @@ def Adele_says(line):
 
 def Adele_one_liner(): print("How you doin?")
 
-class AboutMethods(Koan):
+class AboutProcedures(Koan):
 
     #2
     def test_calling_a_method(self):
