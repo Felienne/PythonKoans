@@ -9,7 +9,7 @@ class AboutRegex(Koan):
         I found this books very useful so I decided to write a koans in order to practice everything I had learned from it.
         http://www.forta.com/books/0672325667/
     """
-
+    # 1
     def test_findall_multiple_times(self):
         being = "Malkovich, Malkovich Malkovich. Malkovich Malkovich Malkovich"
         m = re.findall('Malkovich', being)
@@ -17,13 +17,14 @@ class AboutRegex(Koan):
         self.assertEqual(__, m)
         self.assertEqual(__, len(m))
 
+    # 2
     def test_matching_literal_text_not_case_sensitivity(self):
         movie_007 = "hello my name is bond, james bond. sadly my shift key is broken"
 
         self.assertEqual(re.findall("Bond", movie_007), __)
         self.assertEqual(re.findall("Bond", movie_007, re.IGNORECASE), __)
 
-
+    # 3
     def test_matching_numbers(self):
         address = "Beverly Hills 90210"
         numbers_only_regex = '[0-9]'
@@ -31,6 +32,7 @@ class AboutRegex(Koan):
         numbers_only = re.findall(numbers_only_regex, address)
         self.assertEquals(__,numbers_only)
 
+    # 4
     def test_matching_numbers(self):
         address = "Beverly Hills 90210"
         lower_case_letters_only_regex = '[a-z]'
@@ -38,6 +40,7 @@ class AboutRegex(Koan):
         lower_case_letters_only = re.findall(lower_case_letters_only_regex, address)
         self.assertEquals(__,lower_case_letters_only)
 
+    # 5
     def test_matching_set_character(self):
         boys_names = """
         Harry
@@ -51,6 +54,7 @@ class AboutRegex(Koan):
         names_I_like = re.findall(starts_with_b_or_h_then_arry, boys_names)
         self.assertEquals(__,names_I_like)
 
+    # 6
     def test_matching_set_character(self):
         girls_names = """
         Evangeline
@@ -64,7 +68,7 @@ class AboutRegex(Koan):
         names_I_like = re.findall(ends_with_ine, girls_names,  re.IGNORECASE)
         self.assertEquals(__,names_I_like)
 
-
+    # 7
     def test_matching_anything_but(self):
         girls_names = """
         Evangeline
