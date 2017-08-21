@@ -41,7 +41,7 @@ class AboutRegex(Koan):
         self.assertEquals(__,lower_case_letters_only)
 
     # 5
-    def test_matching_set_character(self):
+    def test_matching_set_character_starts_with(self):
         boys_names = """
         Harry
         Perry
@@ -55,7 +55,7 @@ class AboutRegex(Koan):
         self.assertEquals(__,names_I_like)
 
     # 6
-    def test_matching_set_character(self):
+    def test_matching_set_character_ends_with(self):
         girls_names = """
         Evangeline
         Carolynn
