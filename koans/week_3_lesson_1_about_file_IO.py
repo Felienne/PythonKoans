@@ -3,14 +3,14 @@ from runner.koan import *
 
 class AboutFileIO(Koan):
 
-    #2
+    #1
     def test_reading_full_file(self):
         the_file = open("one_line.txt")
         contents = the_file.read()
 
         self.assertEqual(__, contents)
 
-    #3
+    #2
     def test_reading_file_with_multiple_lines(self):
         the_file = open("short_lines.txt")
 
@@ -19,7 +19,7 @@ class AboutFileIO(Koan):
 
         self.assertEqual(__, contents)
 
-    #4
+    #3
     def test_reading_lines_directly(self):
         the_file = open("short_lines.txt")
 
@@ -27,7 +27,7 @@ class AboutFileIO(Koan):
 
         self.assertEqual(__, lines)
 
-    #5
+    #4
     def test_reading_file_line_by_line(self):
         the_file = open("short_lines.txt")
 
@@ -40,7 +40,7 @@ class AboutFileIO(Koan):
         one_more = the_file.readline()
         self.assertEqual(__, one_more)
 
-    #6
+    #5
     def test_reading_file_with_for(self):
         the_file = open("short_lines.txt")
 
@@ -51,7 +51,7 @@ class AboutFileIO(Koan):
 
         self.assertEqual(__, lines)
 
-    #7
+    #6
     def test_reading_file_with_for_strip(self):
         the_file = open("short_lines.txt")
 
@@ -63,7 +63,7 @@ class AboutFileIO(Koan):
 
         self.assertEqual(__, lines)
 
-    #8
+    #7
     def test_reading_file_with_with(self):
         # there are a number of reasons for it,
         # but using with is the prefered way of opening a file

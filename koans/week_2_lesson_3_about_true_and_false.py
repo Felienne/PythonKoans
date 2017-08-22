@@ -24,7 +24,7 @@ class AboutTrueAndFalse(Koan):
         self.assertEquals(__, dessert);
 
     # 3
-    def test_false_is_false(self):
+    def test_false_number_is_false(self):
         dessert = "chocolate"
 
         if 0:

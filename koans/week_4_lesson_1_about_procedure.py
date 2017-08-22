@@ -13,7 +13,7 @@ def Adele_one_liner(): print("How you doin?")
 
 class AboutProcedures(Koan):
 
-    #2
+    #1
     def test_calling_a_method(self):
 
         i = 0
@@ -24,7 +24,7 @@ class AboutProcedures(Koan):
         self.assertEqual(__, i)
         # look at the console!
 
-    #3
+    #2
     def test_calling_a_method_with_parameter(self):
 
         i = 0
@@ -35,11 +35,11 @@ class AboutProcedures(Koan):
         self.assertEqual(__, i)
         # look at the console!
 
-    #4
+    #3
     def test_the_documentation_can_be_viewed_with_the_doc_method(self):
         self.assertEqual(__, Adele_says.__doc__)
 
-    #5
+    #4
     def test_calling_method_with_wrong_number_of_arguments_messages(self):
         try:
             Adele_says()
@@ -56,12 +56,12 @@ class AboutProcedures(Koan):
         self.assertEqual(__, msg)
 
 
-    #6
+    #5
     def test_calling_method_with_wrong_number_of_arguments(self):
         with self.assertRaises(__):
             result = Adele_says("hello","and then some")
 
-    #7
+    #6
     def test_calling_a_one_line_method(self):
 
         i = 0
