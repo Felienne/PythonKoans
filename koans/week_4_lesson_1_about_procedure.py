@@ -6,7 +6,7 @@ def Adele_says_hello():
     print("Hello from the other side")
 
 def Adele_says(line):
-    "This method prints the inputted line"
+    """This method prints the inputted line"""
     print(line)
 
 def Adele_one_liner(): print("How you doin?")

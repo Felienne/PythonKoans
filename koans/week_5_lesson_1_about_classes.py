@@ -2,7 +2,7 @@ from runner.koan import *
 
 
 class Dog:
-    "Dogs need regular walks. Never, ever let them drive."
+    """Dogs need regular walks. Never, ever let them drive."""
     age = 1
 
     def age_in_dog_years(self):
