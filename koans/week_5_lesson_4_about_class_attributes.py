@@ -9,7 +9,7 @@ from runner.koan import *
 
 class AboutClassAttributes(Koan):
     class Dog:
-        "I am a dog without a name."
+        """I am a dog without a name."""
         latin_name = "Canine"
 
     def test_classes_have_their_own_attributes_too(self):
