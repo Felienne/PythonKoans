@@ -62,13 +62,13 @@ It was the worst of times."
 Howdy,
 world!
 """
-        self.assertEqual(15, len(long_welcome))
+        self.assertEqual(15, len(__))
 
     # 11
     def test_triple_quoted_strings_need_less_escaping(self):
         single_quoted_welcome = "Hello \"world\"."
         triple_quoted_welcome = """Hello "world"."""
-        self.assertEqual(__, (a == b))
+        self.assertEqual(__, (single_quoted_welcome == triple_quoted_welcome))
 
     # 12
     def test_plus_concatenates_strings(self):
@@ -85,8 +85,8 @@ world!
         love = "Love"
         lace = "lace"
         first_programmer = love + lace
-        self.assertEqual(__, love)
-        self.assertEqual(__, lace)
+        self.assertEqual(______, love)
+        self.assertEqual(_______, lace)
 
     # 15
     def test_plus_equals_will_append_to_end_of_string(self):
