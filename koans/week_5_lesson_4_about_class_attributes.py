@@ -17,11 +17,12 @@ class AboutClassAttributes(Koan):
         self.assertEqual(__, fido.latin_name)
 
 
-    def test_attrubutes_are_shared_by_instances(self):
+    def test_attributes_are_per_instance(self):
         fido = self.Dog()
         fluffy = self.Dog()
-        self.assertEqual(__, fido.latin_name == fluffy.latin_name)
-
+        self.assertEqual(_____, fido.latin_name == fluffy.latin_name)
+        fido.latin_name = "Dogum"
+        self.assertEqual(______, fido.latin_name == fluffy.latin_name)
 
     def test_defining_attributes_on_individual_objects(self):
         fido = self.Dog()

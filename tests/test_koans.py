@@ -13,6 +13,7 @@ class KoanTest(Koan):
 
     def test_lesson_2_assignments(self):
         self.lesson = week_1_lesson_2_about_assignments
+
         koan = AboutAssignments()
         self.assert_koan(koan.test_integer_assignment, 137)
         self.assert_koan(koan.test_integer_instance_of, 5)
