@@ -12,9 +12,6 @@ class AboutLambdas(Koan):
         self.assertEqual(__, type(add_one))
         self.assertEqual(__, add_one(10))
 
-
-
-
     #2
     def test_accessing_lambda_via_assignment(self):
 

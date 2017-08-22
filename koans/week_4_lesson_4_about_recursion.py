@@ -28,11 +28,11 @@ from runner.koan import *
 
 class AboutRecursion(Koan):
 
-    #2
+    #1
     def test_functions_can_call_each_other(self):
         self.assertEqual(__, multiply_by_adding(5,3))
 
-    #3
+    #2
     def test_functions_can_call_themselves(self):
         self.assertEqual(__, factorial(7))
 

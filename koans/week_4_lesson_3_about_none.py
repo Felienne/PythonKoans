@@ -9,16 +9,16 @@ from runner.koan import *
 
 class AboutNone(Koan):
 
-    #2
+    #1
     def test_none_is_an_object(self):
         self.assertEqual(__, type(None))
 
-    #3
+    #2
     def test_none_is_universal(self):
         "There is only one None"
         self.assertEqual(____, None is None)
 
-    #4
+    #3
     def test_none_is_distinct(self):
         """
         None is distinct from other things which are False.
