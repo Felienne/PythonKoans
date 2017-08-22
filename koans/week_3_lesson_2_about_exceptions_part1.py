@@ -5,7 +5,7 @@ from runner.koan import *
 
 class AboutExceptions(Koan):
 
-    #2
+    #1
     def test_catch_problems(self):
 
         try:
@@ -15,7 +15,7 @@ class AboutExceptions(Koan):
 
         self.assertEqual(__, result)
 
-    #3
+    #2
     def test_can_return_message(self):
 
         try:
@@ -25,7 +25,7 @@ class AboutExceptions(Koan):
 
         self.assertEqual(__, result)
 
-    #4
+    #3
     def test_types_of_exceptions(self):
 
         try:
@@ -38,7 +38,7 @@ class AboutExceptions(Koan):
 
         self.assertEqual(__, result)
 
-    #5
+    #4
     def test_finally(self):
 
         try:
@@ -50,7 +50,7 @@ class AboutExceptions(Koan):
 
         self.assertEqual(__, result)
 
-    #6
+    #5
     def test_finally_success(self):
 
         try:
@@ -62,7 +62,7 @@ class AboutExceptions(Koan):
 
         self.assertEqual(__, result)
 
-    #7
+    #6
     def test_assert_is_raised(self):
         with self.assertRaises(__):
             result = 12 / 0

@@ -24,7 +24,7 @@ class AboutTrueAndFalse(Koan):
         self.assertEquals(__, dessert);
 
     # 3
-    def test_false_is_false(self):
+    def test_false_number_is_false(self):
         dessert = "chocolate"
 
         if 0:
@@ -33,7 +33,7 @@ class AboutTrueAndFalse(Koan):
         self.assertEquals(__, dessert);
 
 
-    # 3
+    # 4
     def test_empty_string_is_false(self):
         dessert = "chocolate"
 
@@ -42,7 +42,7 @@ class AboutTrueAndFalse(Koan):
 
         self.assertEquals(__, dessert);
 
-    # 4
+    # 5
     def test_empty_set_is_false(self):
         dessert = "chocolate"
 
@@ -51,7 +51,7 @@ class AboutTrueAndFalse(Koan):
 
         self.assertEquals(__, dessert);
 
-    # 5
+    # 6
     def empty_list_is_false(self):
         dessert = "chocolate"
 
@@ -60,7 +60,7 @@ class AboutTrueAndFalse(Koan):
 
         self.assertEquals(__, dessert);
 
-    # 6
+    # 7
     def test_everything_else_is_treated_as_true(self):
         dessert = "chocolate"
 

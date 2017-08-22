@@ -5,7 +5,7 @@ def add(a, b):
     return a + b
 
 def format_info(name, age = 18):
-   "This returns the passed info as a nicely formatted string"
+   """This returns the passed info as a nicely formatted string"""
    name_and_age_formatted = "{0} is currently {1} years old".format(name,age)
 
    return name_and_age_formatted
