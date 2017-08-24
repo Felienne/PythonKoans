@@ -1,3 +1,5 @@
+import sys
+
 from runner.koan import *
 
 class AboutAssignments(Koan):
@@ -30,14 +32,14 @@ class AboutAssignments(Koan):
 
     # 6
     def test_list_assignment(self):
-        names = ["John", "Smith"]
-        self.assertEqual(__, names)
+        names = ["John", __]
+        self.assertEqual(["John", "Smith"], names)
 
     # 7
     def test_list_multi_assignments(self):
         first_name, last_name = ["John", "Smith"]
-        self.assertEqual(__, first_name)
-        self.assertEqual(__, last_name)
+        self.assertEqual(______, first_name)
+        self.assertEqual(_______, last_name)
 
     # 8
     def test_parallel_assignments_with_extra_values(self):
@@ -49,16 +51,16 @@ class AboutAssignments(Koan):
     # 9
     def test_parallel_assignments_with_sublists(self):
         first_name, last_name = [["Billy", "Bob"], "Thornton"]
-        self.assertEqual(__, first_name)
-        self.assertEqual(__, last_name)
+        self.assertEqual(______, first_name)
+        self.assertEqual(_______, last_name)
 
     # 10
     def test_swapping_with_parallel_assignment(self):
         first_minion = "Bob"
         last_minion = "Kevin"
         first_minion, last_minion = last_minion, first_minion
-        self.assertEqual(__, first_minion)
-        self.assertEqual(__, last_minion)
+        self.assertEqual(______, first_minion)
+        self.assertEqual(_______, last_minion)
 
 
 
