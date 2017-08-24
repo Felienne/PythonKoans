@@ -28,6 +28,31 @@ class FancyCat:
     def get_full_name(self):
         return "{0}. {1}".format(__,self.name)
 
+class Puppy:
+    def give_food(self, food):
+        return "Yum, I like {0}".format(food)
+
+class Kitten:
+    def __init__(self, favorite_food):
+        self.favorite_food = favorite_food
+
+    def give_food(self, food):
+        if food == self.favorite_food:
+            return "Yum!"
+        else:
+            return "Uuuuuuugh!"
+
+class AI:
+    def is_self_aware(self):
+        return AI == type(self)
+
+class Calculator:
+    total = 0
+
+    def add(self, value):
+        self.total += value
+        return self
+
 
 class AboutClasses(Koan):
     #1
@@ -75,30 +100,10 @@ class AboutClasses(Koan):
         self.assertEqual(__, magically_evil_cat.title)
         self.assertEqual(__, evil_cat.name)
 
-class Puppy:
-    def give_food(self, food):
-        return "Yum, I like {0}".format(food)
-
-class AboutClasses2(Koan):
     def test_methods_can_take_parameters(self):
         fluffy = Puppy()
         self.assertEqual("Yum, I like potatoes", fluffy.give_food(__))
 
-class Kitten:
-    def __init__(self, favorite_food):
-        self.favorite_food = favorite_food
-
-    def give_food(self, food):
-        if food == self.favorite_food:
-            return "Yum!"
-        else:
-            return "Uuuuuuugh!"
-
-class AI:
-    def is_self_aware(self):
-        return AI == type(self)
-
-class AboutClasses3(Koan):
     def test_methods_can_take_parameters_and_use_data(self):
         garfield = Kitten("lasagna")
         self.assertEqual(__, garfield.give_food("potatoes"))
@@ -119,6 +124,7 @@ class AboutClasses3(Koan):
         def give_food(self, food):
             return "More {0} please".format(food)
 
+    #12
     def test_referencing_different_classes(self):
         beethoven = Puppy()
         fang = self.Puppy()
@@ -127,30 +133,23 @@ class AboutClasses3(Koan):
         self.assertEqual(__, fang.give_food("shoes"))
 
 
-    #12
+    #13
     def test_what_is_self_here(self):
         self.assertEqual(__, type(self))
 
-    # 9
+    #14
     def test_self_aware(self):
         alexa = AI()
         self.assertEqual(__, alexa.is_self_aware())
 
-class Calculator:
-    total = 0
-
-    def add(self, value):
-        self.total += value
-        return self
-
-class AboutClasses3(Koan):
-
+    #15
     def test_self_can_be_returned(self):
         c = Calculator()
         c.add(1).add(1).add(1)
         self.assertEqual(__, c.total)
 
-    def test_self_can_be_returned(self):
+    #16
+    def test_type_of_return_self_is(self):
         c = Calculator()
 
         self.assertEqual(Calculator, _________(c.add(1)))

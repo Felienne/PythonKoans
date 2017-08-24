@@ -40,6 +40,8 @@ class AboutInheritance(Koan):
     def test_all_built_in_classes_ultimately_inherit_from_object_class(self):
         self.assertEqual(__, issubclass(str, object))
 
+#TODO: also do isinstance not only issubclass!
+
 
     def test_instances_inherit_behavior_from_parent_class(self):
         chico = self.Chihuahua("Chico")

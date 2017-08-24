@@ -39,4 +39,5 @@ class AboutRecursion(Koan):
     #3
     def test_recursive_function_can_have_more_base_cases(self):
         self.assertEqual(13, fibonacci(8))
+        #hint: where is the blank for this koan?
 
