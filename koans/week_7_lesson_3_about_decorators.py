@@ -1,128 +1,70 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+#examples based on: https://www.thecodeship.com/patterns/guide-to-python-function-decorators/
+
 from runner.koan import *
 
-import functools
 
-class AboutDecoratingWithClasses(Koan):
-    def maximum(self, a, b):
-        if a>b:
-            return a
-        else:
-            return b
+def greet(name):
+    return "Hello there {0}!".format(name)
 
-    def test_partial_that_wrappers_no_args(self):
-        """
-        Before we can understand this type of decorator we need to consider
-        the partial.
-        """
-        max = functools.partial(self.maximum)
+def bold_decorate(func):
+    def func_wrapper(name):
+        return "<b>{0}</b>".format(func(name))
+    return func_wrapper
 
-        self.assertEqual(__, max(7,23))
-        self.assertEqual(__, max(10,-10))
+def italic_decorate(func):
+    def func_wrapper(name):
+        return "<i>{0}</i>".format(func(name))
+    return func_wrapper
 
-    def test_partial_that_wrappers_first_arg(self):
-        max0 = functools.partial(self.maximum, 0)
+@bold_decorate
+def bold_greet(name):
+    return "Hello there {0}!".format(name)
 
-        self.assertEqual(__, max0(-4))
-        self.assertEqual(__, max0(5))
+@bold_decorate
+@italic_decorate
+def bold_and_italic_greet(name):
+    return "Hello there {0}!".format(name)
 
-    def test_partial_that_wrappers_all_args(self):
-        always99 = functools.partial(self.maximum, 99, 20)
-        always20 = functools.partial(self.maximum, 9, 20)
+def tags(tag_name):
+    def tags_decorator(func):
+        def func_wrapper(name):
+            return "<{0}>{1}</{0}>".format(tag_name, func(name))
+        return func_wrapper
+    return tags_decorator
 
-        self.assertEqual(__, always99())
-        self.assertEqual(__, always20())
+@tags("h1")
+def header_greet(name):
+    return "Hello there {0}!".format(name)
 
-    # ------------------------------------------------------------------
+class AboutDecorators(Koan):
 
-    class doubleit:
-        def __init__(self, fn):
-            self.fn = fn
+    #1
+    def test_simple_greeting(self):
+        self.assertEqual("Hello there Mary Lou", _________(__))
 
-        def __call__(self, *args):
-            return self.fn(*args) + ', ' + self.fn(*args)
+    #2
+    def test_decorating_a_function(self):
+        get_bold = bold_decorate(greet)
+        self.assertEqual(__, get_bold("Mary Lou"))
+        self.assertEqual(__, bold_decorate(_________)("Peggy Sue"))
 
-        def __get__(self, obj, cls=None):
-            if not obj:
-                # Decorating an unbound function
-                return self
-            else:
-                # Decorating a bound method
-                return functools.partial(self, obj)
+    #3
+    def test_decorating_with_at(self):
+        self.assertEqual(__, bold_greet("Richard Wayne Gary Wayn"))
 
-    @doubleit
-    def foo(self):
-        return "foo"
+    #4
+    def test_stacking_decorators_normally(self):
+        get_bold_and_italic = bold_decorate(italic_decorate(greet))
+        self.assertEqual(__, get_bold_and_italic("Richard Wayne Gary Wayne"))
 
-    @doubleit
-    def parrot(self, text):
-        return text.upper()
+    #5
+    def test_stacking_with_at(self):
+        self.assertEqual(__, bold_and_italic_greet("Richard Wayne Gary Wayne"))
 
-    def test_decorator_with_no_arguments(self):
-        # To clarify: the decorator above the function has no arguments, even
-        # if the decorated function does
-
-        self.assertEqual(__, self.foo())
-        self.assertEqual(__, self.parrot('pieces of eight'))
-
-    # ------------------------------------------------------------------
-
-    def sound_check(self):
-        #Note: no decorator
-        return "Testing..."
-
-    def test_what_a_decorator_is_doing_to_a_function(self):
-        #wrap the function with the decorator
-        self.sound_check = self.doubleit(self.sound_check)
-
-        self.assertEqual(__, self.sound_check())
-
-    # ------------------------------------------------------------------
-
-    class documenter:
-        def __init__(self, *args):
-            self.fn_doc = args[0]
-
-        def __call__(self, fn):
-            def decorated_function(*args):
-                return fn(*args)
-
-            if fn.__doc__:
-                decorated_function.__doc__ = fn.__doc__ + ": " + self.fn_doc
-            else:
-                decorated_function.__doc__ = self.fn_doc
-            return decorated_function
-
-    @documenter("Increments a value by one. Kind of.")
-    def count_badly(self, num):
-        num += 1
-        if num==3:
-            return 5
-        else:
-            return num
-    @documenter("Does nothing")
-    def idler(self, num):
-        "Idler"
-        pass
-
-    def test_decorator_with_an_argument(self):
-        self.assertEqual(__, self.count_badly(2))
-        self.assertEqual(__, self.count_badly.__doc__)
-
-    def test_documentor_which_already_has_a_docstring(self):
-        self.assertEqual(__, self.idler.__doc__)
-
-    # ------------------------------------------------------------------
-
-    @documenter("DOH!")
-    @doubleit
-    @doubleit
-    def homer(self):
-        return "D'oh"
-
-    def test_we_can_chain_decorators(self):
-        self.assertEqual(__, self.homer())
-        self.assertEqual(__, self.homer.__doc__)
+    #6
+    def test_decorators_with_parameters(self):
+        self.assertEqual(__, header_greet("Richard Wayne Gary Wayne"))
 

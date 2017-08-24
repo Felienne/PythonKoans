@@ -62,7 +62,24 @@ class AboutExceptions(Koan):
 
         self.assertEqual(__, result)
 
-    #6
+    #6  TODO nog niet in Stepik
+    def test_else_clause(self):
+        result = None
+        try:
+            result = 12 / 3
+        except ZeroDivisionError:
+            result = "You can't divide by zero, silly."
+        else:
+            to_print = result
+
+        self.assertEqual(__, to_print)
+
+
+    #7
     def test_assert_is_raised(self):
         with self.assertRaises(__):
             result = 12 / 0
+
+
+
+

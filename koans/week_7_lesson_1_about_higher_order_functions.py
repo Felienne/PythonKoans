@@ -10,10 +10,18 @@ def apply(a,b, operator):
 
 def greet(name):
     def get_message():
-        return "Hello "
+        return "Hello there"
 
-    result = get_message() + name
+    result = get_message() + " {0}!".format(name)
     return result
+
+def greet_closure(name):
+    def get_message():
+        return "Hello there {0}!".format(name)
+
+    return get_message
+
+
 
 def add_constant(x):
     def addx(a):
@@ -31,7 +39,7 @@ class AboutHigherOrderFunctions(Koan):
 
     #2
     def test_define_functions_in_other_functions(self):
-        self.assertEqual(__, greet("John"))
+        self.assertEqual(__, greet("Jack"))
 
     #3
     def test_functions_can_be_passed_as_parameters(self):
@@ -43,4 +51,6 @@ class AboutHigherOrderFunctions(Koan):
         add5 = add_constant(5)
         self.assertEqual(__, add5(3))
 
-
+    #5
+    def test_inner_functions_have_access_to_outer_scope(self):
+        self.assertEqual(__, greet("Rose"))

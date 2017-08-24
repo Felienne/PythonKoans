@@ -12,11 +12,13 @@ class AboutAttributeAccess(Koan):
     class TypicalObject:
         pass
 
+    #1
     def test_calling_undefined_functions_normally_results_in_errors(self):
         typical = self.TypicalObject()
 
         with self.assertRaises(___): typical.foobar()
 
+    #2
     def test_calling_getattribute_causes_an_attribute_error(self):
         typical = self.TypicalObject()
 
@@ -33,15 +35,17 @@ class AboutAttributeAccess(Koan):
         def __getattribute__(self, attr_name):
             return "Someone called '" + attr_name + "' and it could not be found"
 
+    #3
     def test_all_attribute_reads_are_caught(self):
         catcher = self.CatchAllAttributeReads()
 
-        self.assertRegex(catcher.foobar, __)
+        self.assertEqual(catcher.foobar, __)
 
+    #4
     def test_intercepting_return_values_can_disrupt_the_call_chain(self):
         catcher = self.CatchAllAttributeReads()
 
-        self.assertRegex(catcher.foobaz, __) # This is fine
+        self.assertEqual(catcher.foobaz, __) # This is fine
 
         try:
             catcher.foobaz(1)
@@ -50,16 +54,11 @@ class AboutAttributeAccess(Koan):
 
         self.assertRegex(err_msg, __)
 
-        # foobaz returns a string. What happens to the '(1)' part?
-        # Try entering this into a python console to reproduce the issue:
-        #
-        #     "foobaz"(1)
-        #
-
+    #5
     def test_changes_to_the_getattribute_implementation_affects_getattr_function(self):
         catcher = self.CatchAllAttributeReads()
 
-        self.assertRegex(getattr(catcher, 'any_attribute'), __)
+        self.assertEqual(getattr(catcher, 'any_attribute'), __)
 
     # ------------------------------------------------------------------
 
@@ -70,51 +69,18 @@ class AboutAttributeAccess(Koan):
             else:
                 return super().__getattribute__(attr_name)
 
+    #6
     def test_foo_attributes_are_caught(self):
         catcher = self.WellBehavedFooCatcher()
 
         self.assertEqual(__, catcher.foo_bar)
         self.assertEqual(__, catcher.foo_baz)
 
+    #7
     def test_non_foo_messages_are_treated_normally(self):
         catcher = self.WellBehavedFooCatcher()
 
         with self.assertRaises(___): catcher.normal_undefined_attribute
-
-    # ------------------------------------------------------------------
-
-    global stack_depth
-    stack_depth = 0
-
-    class RecursiveCatcher:
-        def __init__(self):
-            global stack_depth
-            stack_depth = 0
-            self.no_of_getattribute_calls = 0
-
-        def __getattribute__(self, attr_name):
-            # We need something that is outside the scope of this class:
-            global stack_depth
-            stack_depth += 1
-
-            if stack_depth<=10: # to prevent a stack overflow
-                self.no_of_getattribute_calls += 1
-                # Oops! We just accessed an attribute (no_of_getattribute_calls)
-                # Guess what happens when self.no_of_getattribute_calls is
-                # accessed?
-
-            # Using 'object' directly because using super() here will also
-            # trigger a __getattribute__() call.
-            return object.__getattribute__(self, attr_name)
-
-        def my_method(self):
-            pass
-
-    def test_getattribute_is_a_bit_overzealous_sometimes(self):
-        catcher = self.RecursiveCatcher()
-        catcher.my_method()
-        global stack_depth
-        self.assertEqual(__, stack_depth)
 
     # ------------------------------------------------------------------
 
@@ -131,12 +97,14 @@ class AboutAttributeAccess(Koan):
         def my_method(self):
             pass
 
+    #8
     def test_getattr_ignores_known_attributes(self):
         catcher = self.MinimalCatcher()
         catcher.my_method()
 
         self.assertEqual(__, catcher.no_of_getattr_calls)
 
+    #9
     def test_getattr_only_catches_unknown_attributes(self):
         catcher = self.MinimalCatcher()
         catcher.purple_flamingos()
@@ -153,27 +121,21 @@ class AboutAttributeAccess(Koan):
         def __setattr__(self, attr_name, value):
             new_attr_name =  attr_name
 
-            if attr_name[-5:] == 'comic':
+            if attr_name == 'comic':
                 new_attr_name = "my_" + new_attr_name
-            elif attr_name[-3:] == 'pie':
+            if attr_name == 'pie':
                 new_attr_name = "a_" + new_attr_name
 
             object.__setattr__(self, new_attr_name, value)
 
+    #10
     def test_setattr_intercepts_attribute_assignments(self):
         fanboy = self.PossessiveSetter()
 
-        fanboy.comic = 'The Laminator, issue #1'
         fanboy.pie = 'blueberry'
 
         self.assertEqual(__, fanboy.a_pie)
-
-        #
-        # NOTE: Change the prefix to make this next assert pass
-        #
-
-        prefix = '__'
-        self.assertEqual("The Laminator, issue #1", getattr(fanboy, prefix + '_comic'))
+        self.assertEqual(__, fanboy.pie)
 
     # ------------------------------------------------------------------
 
@@ -190,12 +152,14 @@ class AboutAttributeAccess(Koan):
 
             object.__setattr__(self, new_attr_name, value)
 
+    #11
     def test_it_modifies_external_attribute_as_expected(self):
         setter = self.ScarySetter()
         setter.e = "mc hammer"
 
         self.assertEqual(__, setter.altered_e)
 
+    #12
     def test_it_mangles_some_internal_attributes(self):
         setter = self.ScarySetter()
 
@@ -204,6 +168,7 @@ class AboutAttributeAccess(Koan):
         except AttributeError:
             self.assertEqual(__, setter.altered_num_of_coconuts)
 
+    #13
     def test_in_this_case_private_attributes_remain_unmangled(self):
         setter = self.ScarySetter()
 
