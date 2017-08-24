@@ -8,19 +8,29 @@ from . import joes_animals
 
 counter = 0 # Global
 
-# let op! Kijk even of we dit in Stepik krijgen!
-# je kunt met fileIO een file schrijven (weet ik zeker)
-# en dan importen (denk ik)
-# zo niet, dan mail even dan droppen we de relevante koans
-
 class AboutScope(Koan):
 
 
     #1
+    def test_variable_with_same_name_is_different_variable(self):
+        counter = 12
+        self.assertEqual(__, counter)
+
+    #2
+    def test_global_access_is_possible_with_keyword(self):
+        global counter
+        self.assertEqual(__, counter)
+
+    # let op! Kijk even of we dit in Stepik krijgen!
+    # je kunt met fileIO een file schrijven (weet ik zeker)
+    # en dan importen (denk ik)
+    # zo niet, dan mail even dan droppen we de relevante koans
+
+    #3
     def test_dog_is_not_available_in_the_current_scope(self):
         with self.assertRaises(___): fido = Dog()
 
-    #2
+    #4
     def test_you_can_reference_nested_classes_using_the_scope_operator(self):
         fido = jims_animals.Dog()
         # name 'jims' module name is taken from jims_animals.py filename
@@ -34,19 +44,14 @@ class AboutScope(Koan):
 
     # ------------------------------------------------------------------
 
-    #3
     class str:
-        pass
+        """Fake string. So sad!"""
 
     #4
-    def test_bare_bones_class_names_do_not_assume_the_current_scope(self):
-        self.assertEqual(__, AboutScope.str == str)
-
-    #5
     def test_nested_string_is_not_the_same_as_the_system_string(self):
-        self.assertEqual(__, self.str == type("HI"))
+        self.assertEqual(__, self.str.__doc__)
 
-    #6
+    #4
     def test_str_without_self_prefix_stays_in_the_global_scope(self):
         self.assertEqual(__, str == type("HI"))
 
@@ -54,13 +59,13 @@ class AboutScope(Koan):
 
     PI = 3.1416
 
-    #7
+    #5
     def test_constants_are_defined_with_an_initial_uppercase_letter(self):
         self.assertAlmostEqual(_____, self.PI)
         # Note, floating point numbers in python are not precise.
         # assertAlmostEqual will check that it is 'close enough'
 
-    #8
+    #6
     def test_constants_are_assumed_by_convention_only(self):
         self.PI = "rhubarb"
         self.assertEqual(_____, self.PI)
@@ -69,50 +74,36 @@ class AboutScope(Koan):
 
     # ------------------------------------------------------------------
 
-    def increment_using_local_counter(self, counter):
-        counter = counter + 1
+    def incide_local(self):
+        msg = "Outside!"
 
-    def increment_using_global_counter(self):
-        global counter
-        counter = counter + 1
+        def inside():
+            msg = "Inside!"
+            print(msg)
 
-    #9
-    def test_incrementing_with_local_counter(self):
-        global counter
-        start = counter
-        self.increment_using_local_counter(start)
-        self.assertEqual(__, counter == start + 1)
+        inside()
+        print(msg)
 
-    #10
-    def test_incrementing_with_global_counter(self):
-        global counter
-        start = counter
-        self.increment_using_global_counter()
-        self.assertEqual(__, counter == start + 1)
 
-    # ------------------------------------------------------------------
+    def incide_non_local(self):
+        msg = "Outside!"
 
-    def local_access(self):
-        stuff = 'eels'
-        def from_the_league():
-            stuff = 'this is a local shop for local people'
-            return stuff
-        return from_the_league()
+        def inside():
+            nonlocal msg
+            msg = "Inside!"
+            print(msg)
 
-    def nonlocal_access(self):
-        stuff = 'eels'
-        def from_the_boosh():
-            nonlocal stuff
-            return stuff
-        return from_the_boosh()
+        inside()
+        print(msg)
+
 
     #11
     def test_getting_something_locally(self):
-        self.assertEqual(__, self.local_access())
+        self.assertEqual(__, self.incide_local())
 
     #12
     def test_getting_something_nonlocally(self):
-        self.assertEqual(__, self.nonlocal_access())
+        self.assertEqual(__, self.incide_non_local())
 
     # ------------------------------------------------------------------
 
