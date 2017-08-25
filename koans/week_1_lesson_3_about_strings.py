@@ -2,10 +2,17 @@ from runner.koan import *
 
 class AboutStrings(Koan):
 
+    value = 1
+
+    @property
+    def _(self):
+        return "fill in the blank"
+
     # 1
     def test_double_quoted_strings_are_strings(self):
+        print(self._)
         welcome = "Hello, world."
-        self.assertEqual(__, isinstance(welcome, str))
+        self.assertEqual(self._, isinstance(welcome, str))
 
     # 2
     def test_print_something(self):
