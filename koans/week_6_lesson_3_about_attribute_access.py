@@ -9,20 +9,41 @@ from runner.koan import *
 
 class AboutAttributeAccess(Koan):
 
-    class TypicalObject:
-        pass
+    class Panda:
+        bionomal_name = "Ailuropoda melanoleuca"
+        colors = ["black", "white"]
+
+        def __init__(self, name):
+            self.name = name
+
+        def number_of_paws(self):
+            return 4
 
     #1
-    def test_calling_undefined_functions_normally_results_in_errors(self):
-        typical = self.TypicalObject()
+    def test_getting_field_with_getattribute(self):
+        wu_wen = self.Panda("Wu Wen")
+        name = wu_wen.__getattribute__('name')
+        self.assertEqual(__, name)
 
-        with self.assertRaises(___): typical.foobar()
 
     #2
+    def test_getting_field_with_getattribute_variable(self):
+        xing_ya = self.Panda("Xing Ya")
+        attribute_to_get = "colors"
+
+        colors = xing_ya.__getattribute__(__)
+        self.assertEqual(["black", "white"], colors)
+
+    #3
+    def test_calling_non_existing_functions_results_in_errors(self):
+        xing_ya = self.Panda("Xing Ya")
+        with self.assertRaises(___): xing_ya.number_of_wings()
+
+    #4
     def test_calling_getattribute_causes_an_attribute_error(self):
         typical = self.TypicalObject()
 
-        with self.assertRaises(___): typical.__getattribute__('foobar')
+        with self.assertRaises(___): typical.____getattribute____('foobar')
 
         # THINK ABOUT IT:
         #
@@ -35,13 +56,13 @@ class AboutAttributeAccess(Koan):
         def __getattribute__(self, attr_name):
             return "Someone called '" + attr_name + "' and it could not be found"
 
-    #3
+    #5
     def test_all_attribute_reads_are_caught(self):
         catcher = self.CatchAllAttributeReads()
 
         self.assertEqual(catcher.foobar, __)
 
-    #4
+    #6
     def test_intercepting_return_values_can_disrupt_the_call_chain(self):
         catcher = self.CatchAllAttributeReads()
 
@@ -54,7 +75,7 @@ class AboutAttributeAccess(Koan):
 
         self.assertRegex(err_msg, __)
 
-    #5
+    #7
     def test_changes_to_the_getattribute_implementation_affects_getattr_function(self):
         catcher = self.CatchAllAttributeReads()
 
@@ -69,14 +90,14 @@ class AboutAttributeAccess(Koan):
             else:
                 return super().__getattribute__(attr_name)
 
-    #6
+    #8
     def test_foo_attributes_are_caught(self):
         catcher = self.WellBehavedFooCatcher()
 
         self.assertEqual(__, catcher.foo_bar)
         self.assertEqual(__, catcher.foo_baz)
 
-    #7
+    #9
     def test_non_foo_messages_are_treated_normally(self):
         catcher = self.WellBehavedFooCatcher()
 
@@ -97,14 +118,14 @@ class AboutAttributeAccess(Koan):
         def my_method(self):
             pass
 
-    #8
+    #10
     def test_getattr_ignores_known_attributes(self):
         catcher = self.MinimalCatcher()
         catcher.my_method()
 
         self.assertEqual(__, catcher.no_of_getattr_calls)
 
-    #9
+    #11
     def test_getattr_only_catches_unknown_attributes(self):
         catcher = self.MinimalCatcher()
         catcher.purple_flamingos()
@@ -128,7 +149,7 @@ class AboutAttributeAccess(Koan):
 
             object.__setattr__(self, new_attr_name, value)
 
-    #10
+    #12
     def test_setattr_intercepts_attribute_assignments(self):
         fanboy = self.PossessiveSetter()
 
@@ -152,14 +173,14 @@ class AboutAttributeAccess(Koan):
 
             object.__setattr__(self, new_attr_name, value)
 
-    #11
+    #13
     def test_it_modifies_external_attribute_as_expected(self):
         setter = self.ScarySetter()
         setter.e = "mc hammer"
 
         self.assertEqual(__, setter.altered_e)
 
-    #12
+    #14
     def test_it_mangles_some_internal_attributes(self):
         setter = self.ScarySetter()
 
@@ -168,7 +189,7 @@ class AboutAttributeAccess(Koan):
         except AttributeError:
             self.assertEqual(__, setter.altered_num_of_coconuts)
 
-    #13
+    #15
     def test_in_this_case_private_attributes_remain_unmangled(self):
         setter = self.ScarySetter()
 

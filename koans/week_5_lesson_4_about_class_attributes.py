@@ -10,19 +10,19 @@ from runner.koan import *
 class AboutClassAttributes(Koan):
     class Dog:
         """I am a dog without a name."""
-        latin_name = "Canine"
+        bionomal_name = "Canine"
 
     def test_classes_have_their_own_attributes_too(self):
         fido = self.Dog()
-        self.assertEqual(__, fido.latin_name)
+        self.assertEqual(__, fido.bionomal_name)
 
 
     def test_attributes_are_per_instance(self):
         fido = self.Dog()
         fluffy = self.Dog()
-        self.assertEqual(_____, fido.latin_name == fluffy.latin_name)
-        fido.latin_name = "Dogum"
-        self.assertEqual(______, fido.latin_name == fluffy.latin_name)
+        self.assertEqual(_____, fido.bionomal_name == fluffy.bionomal_name)
+        fido.bionomal_name = "Dogum"
+        self.assertEqual(______, fido.bionomal_name == fluffy.bionomal_name)
 
     def test_defining_attributes_on_individual_objects(self):
         fido = self.Dog()
