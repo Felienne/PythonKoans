@@ -64,10 +64,15 @@ class AboutClasses(Koan):
     def test_classes_have_documentation_too(self):
         self.assertEqual(Dog.__doc__, __)
 
-    #2
-    def test_classes_have_documentation_too(self):
+
+    def test_classes_have_documentation_too_two(self):
         self.assertEqual(Cat.__doc__, "Cats can walk themselves. Go away!")
         # Hint: Where is the blank for this Koan?
+
+    def test_we_can_determine_what_class_a_variable_has(self):
+        fido = Dog()
+        self.assertEqual(__, isinstance(fido, Dog))
+        self.assertEqual(False, isinstance(fido, __))
 
     def test_objects_have_data(self):
         fido = Dog()

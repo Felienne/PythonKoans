@@ -5,6 +5,7 @@ class AboutFileIO(Koan):
 
     #1
     def test_reading_full_file(self):
+
         the_file = open("one_line.txt")
         contents = the_file.read()
 
@@ -12,6 +13,7 @@ class AboutFileIO(Koan):
 
     #2
     def test_reading_file_with_multiple_lines(self):
+
         the_file = open("short_lines.txt")
 
         print(the_file)

@@ -34,11 +34,16 @@ class AboutInheritance(Koan):
     def test_subclasses_have_the_parent_as_an_ancestor(self):
         self.assertEqual(__, issubclass(self.Chihuahua, self.Dog))
 
+
+
     def test_all_defined_classes_ultimately_inherit_from_object_class(self):
         self.assertEqual(__, issubclass(self.Chihuahua, object))
 
     def test_all_built_in_classes_ultimately_inherit_from_object_class(self):
         self.assertEqual(__, issubclass(str, object))
+
+
+
 
 #TODO: also do isinstance not only issubclass!
 
