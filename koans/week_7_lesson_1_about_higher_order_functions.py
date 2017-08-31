@@ -19,9 +19,7 @@ def greet_closure(name):
     def get_message():
         return "Hello there {0}!".format(name)
 
-    return get_message
-
-
+    return get_message()
 
 def add_constant(x):
     def addx(a):
@@ -53,4 +51,4 @@ class AboutHigherOrderFunctions(Koan):
 
     #5
     def test_inner_functions_have_access_to_outer_scope(self):
-        self.assertEqual(__, greet("Rose"))
+        self.assertEqual(__, greet_closure("Rose"))
