@@ -47,11 +47,11 @@ class AboutScope(Koan):
     class str:
         """Fake string. So sad!"""
 
-    #4
+    #5
     def test_nested_string_is_not_the_same_as_the_system_string(self):
         self.assertEqual(__, self.str.__doc__)
 
-    #4
+    #6
     def test_str_without_self_prefix_stays_in_the_global_scope(self):
         self.assertEqual(__, str == type("HI"))
 
@@ -59,13 +59,13 @@ class AboutScope(Koan):
 
     PI = 3.1416
 
-    #5
+    #7
     def test_constants_are_defined_with_an_initial_uppercase_letter(self):
         self.assertAlmostEqual(_____, self.PI)
         # Note, floating point numbers in python are not precise.
         # assertAlmostEqual will check that it is 'close enough'
 
-    #6
+    #8
     def test_constants_are_assumed_by_convention_only(self):
         self.PI = "rhubarb"
         self.assertEqual(_____, self.PI)
@@ -74,7 +74,7 @@ class AboutScope(Koan):
 
     # ------------------------------------------------------------------
 
-    def incide_local(self):
+    def inside_local(self):
         msg = "Outside!"
 
         def inside():
@@ -85,7 +85,7 @@ class AboutScope(Koan):
         print(msg)
 
 
-    def incide_non_local(self):
+    def inside_non_local(self):
         msg = "Outside!"
 
         def inside():
@@ -97,19 +97,19 @@ class AboutScope(Koan):
         print(msg)
 
 
-    #11
+    #9
     def test_getting_something_locally(self):
-        self.assertEqual(__, self.incide_local())
+        self.assertEqual(__, self.inside_local())
 
-    #12
+    #10
     def test_getting_something_nonlocally(self):
-        self.assertEqual(__, self.incide_non_local())
+        self.assertEqual(__, self.inside_non_local())
 
     # ------------------------------------------------------------------
 
     global deadly_bingo
     deadly_bingo = [4, 8, 15, 16, 23, 42]
 
-    #13
+    #11
     def test_global_attributes_can_be_created_in_the_middle_of_a_class(self):
         self.assertEqual(__, deadly_bingo[5])
