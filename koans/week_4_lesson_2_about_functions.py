@@ -36,7 +36,7 @@ class AboutFunctions(Koan):
 
     #3
     def test_calling_with_named_parameters(self):
-        self.assertEqual(__, format_info(name = 'Chatum', Age=37))
+        self.assertEqual(__, format_info(name = 'Chatum', age=37))
         self.assertEqual(__, format_info(age = 47, name = 'Matthew'))
 
     #4
@@ -68,7 +68,7 @@ class AboutFunctions(Koan):
 
     #7
     def test_function_too_raises_on_wrong_number_of_args(self):
-        with self.assertRaises(__):
+        with self.assertRaises(___):
             result = add(15, 29, 13)
 
     #8

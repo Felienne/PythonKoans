@@ -58,7 +58,7 @@ class AboutProcedures(Koan):
 
     #5
     def test_calling_method_with_wrong_number_of_arguments(self):
-        with self.assertRaises(__):
+        with self.assertRaises(___):
             result = Adele_says("hello","and then some")
 
     #6
