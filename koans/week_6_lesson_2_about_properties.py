@@ -18,7 +18,7 @@ class AboutProperties(Koan):
             else:
                 return "VROOM VROOM"
 
-
+    #1
     def test_fields_are_mutable(self):
         the_flash = self.Person()
         self.assertEqual("Too young", the_flash.drive())
@@ -33,12 +33,12 @@ class AboutProperties(Koan):
         def age(self):
             return self._age
 
-
+    #2
     def test_properties_can_be_read_only(self):
         the_flash = self.ImmutablePerson()
         self.assertEqual(10, the_flash.age)
 
-        with self.assertRaises(__):
+        with self.assertRaises(___):
             the_flash.age = 24
 
     class MutablePerson:
@@ -53,17 +53,18 @@ class AboutProperties(Koan):
         def age(self, value):
             self._age = value
 
+    #3
     def test_adding_setters_makes_properties_mutable(self):
         the_flash = self.MutablePerson()
         self.assertEqual(_____, the_flash.age)
         the_flash.age = 24
         self.assertEqual(______, the_flash.age)
 
-
+    #4
     def test_properties_are_methods_that_can_be_accessed_like_variables(self):
         the_flash = self.MutablePerson()
         self.assertEqual(10, the_flash.age)
-        the_flash.age += __
+        the_flash.age += _____
         self.assertEqual(24, the_flash.age)
 
     class Doctor:
@@ -82,18 +83,21 @@ class AboutProperties(Koan):
             else:
                 self._age = value
 
+    #5
     def test_validation3(self):
         jodie = self.Doctor()
         self.assertEqual(903, jodie.age)
         jodie.age += 9
         self.assertEqual(__, jodie.age)
 
+    #6
     def test_validation(self):
         david = self.Doctor()
         self.assertEqual(903, david.age)
         david.age = 9
         self.assertEqual(__, david.age)
 
+    #7
     def test_validation2(self):
         william = self.Doctor()
         self.assertEqual(903, william.age)
@@ -121,12 +125,14 @@ class AboutProperties(Koan):
         def y(self, value):
             __
 
+    #8
     def test_assigning_values(self):
         game = self.TicTacToe()
         game.x = 3
         self.assertEqual(__,game.x)
         # hint: you need to write the setter
 
+    #9
     def test_highest_value_allowed_is_three(self):
         game = self.TicTacToe()
         game.y = 2
@@ -135,6 +141,7 @@ class AboutProperties(Koan):
         self.assertEqual(3,game.y)
         # hint: you need to write the setter
 
+    #10
     def test_lowest_value_allowed_is_one(self):
         game = self.TicTacToe()
         game.y = 2
@@ -157,13 +164,14 @@ class AboutProperties(Koan):
             else:
                 self._name = value
 
+    #11
     def test_validation_reject_invalid_values(self):
         bob = self.Cat()
         with self.assertRaises(ValueError):
             bob.name = __
 
         bob = self.Cat()
-        with self.assertRaises(__):
+        with self.assertRaises(___):
             bob.name = "dog"
 
     class Counter:
@@ -175,6 +183,7 @@ class AboutProperties(Koan):
             self._count += _____
             return self._count
 
+    #12
     def test_properties_allow_calculation(self):
         graaf_tel = self.Counter()
         self.assertEqual(1, graaf_tel.count)
@@ -194,7 +203,7 @@ class AboutProperties(Koan):
         def poetry(self,value):
             self._names_are_meaningless = value
 
-
+    #13
     def test_matching_properties_and_fields_are_used_by_convention_only(self):
         dada = self.Dada()
         self.assertEqual(__, dada.poetry)

@@ -85,10 +85,12 @@ class AboutMultipleInheritance(Koan):
     #
     # ------------------------------------------------------------------
 
+    #1
     def test_normal_methods_are_available_in_the_object(self):
         jeff = self.Spiderpig()
         self.assertRegex(jeff.speak(), __)
 
+    #2
     def test_base_class_methods_are_also_available_in_the_object(self):
         jeff = self.Spiderpig()
         try:
@@ -97,6 +99,7 @@ class AboutMultipleInheritance(Koan):
             self.fail("This should not happen")
         self.assertEqual(__, jeff.can_climb_walls())
 
+    #3
     def test_base_class_methods_can_affect_instance_variables_in_the_object(self):
         jeff = self.Spiderpig()
         self.assertEqual(__, jeff.name)
@@ -104,14 +107,17 @@ class AboutMultipleInheritance(Koan):
         jeff.set_name("Rover")
         self.assertEqual(__, jeff.name)
 
+    #4
     def test_left_hand_side_inheritance_tends_to_be_higher_priority(self):
         jeff = self.Spiderpig()
         self.assertEqual(__, jeff.color())
 
+    #5
     def test_super_class_methods_are_higher_priority_than_super_super_classes(self):
         jeff = self.Spiderpig()
         self.assertEqual(__, jeff.legs())
-
+        
+    #6
     def test_we_can_inspect_the_method_resolution_order(self):
         #
         # MRO = Method Resolution Order
@@ -124,6 +130,7 @@ class AboutMultipleInheritance(Koan):
         self.assertEqual(__, mro[4].__name__)
         self.assertEqual(__, mro[5].__name__)
 
+    #7
     def test_confirm_the_mro_controls_the_calling_order(self):
         jeff = self.Spiderpig()
         self.assertRegex(jeff.here(), 'Spiderpig')
