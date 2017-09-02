@@ -120,26 +120,32 @@ class AboutClasses(Koan):
         self.assertEqual(__, garfield.give_food("potatoes"))
         self.assertEqual("Yum", garfield.give_food(__))
 
-    #13
+    # ------------------------------------------------------------------
+
     class Turtle:
         def __init__(self, n):
             self.name = n
     
+    #13
     def test_classes_may_be_nested(self):
         sheldon = self.Turtle('Sheldon')
         self.assertEqual(__, type(sheldon))
 
-    #14
+    # ------------------------------------------------------------------
+
     class Puppy:
         def give_food(self, food):
             return "More {0} please".format(food)
 
+    #14
     def test_referencing_different_classes(self):
         beethoven = Puppy()
         fang = self.Puppy()
 
         self.assertEqual("Yum, I like shoes", beethoven.give_food(__))
         self.assertEqual(__, fang.give_food("shoes"))
+
+    # ------------------------------------------------------------------
 
     #15
     def test_what_is_self_here(self):
