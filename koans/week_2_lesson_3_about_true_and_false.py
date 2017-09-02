@@ -52,7 +52,7 @@ class AboutTrueAndFalse(Koan):
         self.assertEquals(__, dessert);
 
     # 6
-    def empty_list_is_false(self):
+    def test_empty_list_is_false(self):
         dessert = "chocolate"
 
         if []:
