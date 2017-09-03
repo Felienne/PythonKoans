@@ -103,8 +103,8 @@ class AboutClasses(Koan):
 
     #10
     def test_different_objects_have_different_instance_variables(self):
-        magically_evil_cat = FancyCat("Mrs", "Norris")
-        evil_cat = FancyCat("Mr.","Bigglesworth")
+        magically_evil_cat = FancyCat("Norris", "Mrs")
+        evil_cat = FancyCat("Bigglesworth", "Mr")
 
         self.assertEqual(__, magically_evil_cat.title)
         self.assertEqual(__, evil_cat.name)
