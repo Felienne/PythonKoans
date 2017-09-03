@@ -43,7 +43,7 @@ class AboutDecorators(Koan):
 
     #1
     def test_simple_greeting(self):
-        self.assertEqual("Hello there Mary Lou", _________(__))
+        self.assertEqual("Hello there Mary Lou!", _________(__))
 
     #2
     def test_decorating_a_function(self):
