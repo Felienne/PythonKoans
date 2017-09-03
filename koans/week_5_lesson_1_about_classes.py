@@ -118,7 +118,7 @@ class AboutClasses(Koan):
     def test_methods_can_take_parameters_and_use_data(self):
         garfield = Kitten("lasagna")
         self.assertEqual(__, garfield.give_food("potatoes"))
-        self.assertEqual("Yum", garfield.give_food(__))
+        self.assertEqual("Yum!", garfield.give_food(__))
 
     # ------------------------------------------------------------------
 
