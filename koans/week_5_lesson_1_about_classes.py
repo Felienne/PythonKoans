@@ -83,7 +83,7 @@ class AboutClasses(Koan):
     #6
     def test_objects_have_methods(self):
         fido = Dog()
-        self.assertEqual(__, fido.ageindogyears())
+        self.assertEqual(__, fido.age_in_dog_years())
 
     #7
     def test_init_is_a_special_method(self):
