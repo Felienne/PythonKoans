@@ -10,9 +10,9 @@ class AboutTrueAndFalse(Koan):
         bear_poop_place = ""
 
         if True:
-            bear_poop_place = ""
+            bear_poop_place = "woods"
 
-        self.assertEqual("woods", bear_poop_place)
+        self.assertEqual(__, bear_poop_place)
 
     # 2
     def test_false_is_false(self):
@@ -24,7 +24,7 @@ class AboutTrueAndFalse(Koan):
         self.assertEquals(__, dessert);
 
     # 3
-    def test_false_number_is_false(self):
+    def test_zero_is_false(self):
         dessert = "chocolate"
 
         if 0:
@@ -67,6 +67,7 @@ class AboutTrueAndFalse(Koan):
         if 2:
             dessert = "ketchup"
 
-        self.assertEquals(__, dessert);
+        self.assertEquals(__, dessert)
+
 
 
