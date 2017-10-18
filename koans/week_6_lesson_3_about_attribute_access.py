@@ -62,7 +62,7 @@ class AboutAttributeAccess(Koan):
 
         self.assertEqual(catcher.foobar, __)
 
-    #6
+    #6 NOTE: This Koan seems a bit confusing here, maybe better to put it in the Exception section
     def test_intercepting_return_values_can_disrupt_the_call_chain(self):
         catcher = self.CatchAllAttributeReads()
 
