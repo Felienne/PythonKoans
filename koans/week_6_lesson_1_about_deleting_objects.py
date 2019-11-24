@@ -46,7 +46,7 @@ class AboutDeletingObjects(Koan):
 
         self.assertEqual(number_of_wings, __)
 
-    #3
+    #4
     def test_del_can_remove_methods(self):
         flappy = self.Bird()
         polly = self.Bird()
